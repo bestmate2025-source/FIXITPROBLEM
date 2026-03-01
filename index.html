@@ -3,44 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftSoft ChepTech - IT Support & Services</title>
+    <title>SoftSolution ChepTech - IT Support & Services in Ajman & Dubai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
         }
         
         :root {
-            --primary: #1a5fb4;
-            --secondary: #26a269;
-            --accent: #e5a50a;
-            --dark: #1e1e1e;
-            --light: #f8f8f8;
-            --gray: #deddda;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary: #10b981;
+            --secondary-dark: #059669;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #cbd5e1;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+            --gradient-hover: linear-gradient(135deg, #1d4ed8 0%, #059669 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(37, 99, 235, 0.15);
         }
         
         body {
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--gray-light);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
         
         /* Header Styles */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            border-bottom: 3px solid transparent;
+            border-image: var(--gradient);
+            border-image-slice: 1;
         }
         
         .header-container {
@@ -53,42 +85,71 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         
         .logo-icon {
-            color: var(--primary);
-            font-size: 2.5rem;
+            background: var(--gradient);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            transform: rotate(0deg);
+            transition: transform 0.3s;
+        }
+        
+        .logo:hover .logo-icon {
+            transform: rotate(10deg);
         }
         
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--dark);
-        }
-        
-        .logo-text span {
-            color: var(--primary);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
         }
         
         .logo-subtitle {
-            font-size: 0.9rem;
-            color: #666;
-            font-weight: 500;
+            font-size: 0.8rem;
+            color: var(--gray);
+            letter-spacing: 1px;
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 30px;
         }
         
         nav a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 600;
+            font-weight: 500;
             font-size: 1rem;
             transition: color 0.3s;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
         }
         
         nav a:hover {
@@ -96,77 +157,168 @@
         }
         
         .contact-header {
-            background-color: var(--primary);
+            background: var(--gradient);
             color: white;
-            padding: 8px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .contact-header:hover {
-            background-color: #0d4a9c;
+            background: var(--gradient-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a5fb4 0%, #0d4a9c 100%);
+            background: var(--gradient);
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .hero p {
             font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
         }
         
         .cta-button {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 15px 35px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary);
+            padding: 16px 40px;
             font-size: 1.1rem;
             font-weight: 600;
-            border-radius: 5px;
+            border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         .cta-button:hover {
-            background-color: #1d8654;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            background: var(--light);
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 60px 0;
+            background: white;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            border-radius: 30px 30px 0 0;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .stat-item p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            font-weight: 500;
         }
         
         /* Services Section */
         .services {
             padding: 80px 0;
-            background-color: white;
+            background: var(--light);
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--dark);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
         }
         
         .section-title p {
-            color: #666;
+            color: var(--gray);
             font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto;
@@ -174,35 +326,59 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
         
         .service-card {
-            background-color: var(--light);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-hover);
         }
         
         .service-icon {
-            background-color: var(--primary);
+            background: var(--gradient);
             color: white;
             width: 70px;
             height: 70px;
-            border-radius: 50%;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            border-radius: 15px;
+            transform: rotate(5deg);
         }
         
         .service-card h3 {
@@ -212,8 +388,9 @@
         }
         
         .service-card p {
-            color: #666;
+            color: var(--gray);
             margin-bottom: 20px;
+            line-height: 1.7;
         }
         
         .service-link {
@@ -222,86 +399,308 @@
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            transition: gap 0.3s;
         }
         
-        /* Stats Section */
-        .stats {
-            background-color: var(--primary);
-            color: white;
-            padding: 60px 0;
+        .service-link:hover {
+            gap: 12px;
         }
         
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-        
-        .stat-item h3 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-        
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* Support Options */
-        .support-options {
+        /* Support Plans Section */
+        .support-plans {
             padding: 80px 0;
-            background-color: var(--light);
+            background: white;
         }
         
-        .options-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
         
-        .option-card {
-            flex: 1;
-            min-width: 300px;
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        .plan-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
         
-        .option-card h3 {
-            font-size: 1.5rem;
+        .plan-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-light);
+        }
+        
+        .plan-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--gradient);
+            color: white;
+            padding: 8px 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+        
+        .plan-icon {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .plan-card h3 {
+            font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--dark);
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+        
+        .plan-price span {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .plan-features li {
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
+            color: var(--gray);
         }
         
-        .option-icon {
+        .plan-features i {
+            color: var(--secondary);
+        }
+        
+        .plan-button {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .plan-button:hover {
+            background: var(--gradient-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Location & Map Section */
+        .location-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .location-info {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .location-badge {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .location-info h3 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .address-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .address-line {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .address-line i {
             color: var(--primary);
+            font-size: 1.2rem;
+            width: 25px;
+        }
+        
+        .address-line p {
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            height: 450px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .direction-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .direction-btn {
+            flex: 1;
+            min-width: 140px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: white;
+            color: var(--dark);
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .direction-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .direction-btn.google:hover {
+            background: #4285f4;
+        }
+        
+        .direction-btn.waze:hover {
+            background: #33ccff;
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background: var(--dark);
             color: white;
             padding: 60px 0 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
         }
         
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
             gap: 40px;
             margin-bottom: 40px;
         }
         
         .footer-column h3 {
             font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient);
+        }
+        
+        .footer-column p {
+            color: #9ca3af;
             margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
             color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
         }
         
         .footer-column ul {
@@ -309,39 +708,131 @@
         }
         
         .footer-column ul li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .footer-column ul li a {
-            color: #bbb;
+            color: #9ca3af;
             text-decoration: none;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .footer-column ul li a:hover {
             color: white;
+            transform: translateX(5px);
         }
         
-        .contact-info {
-            color: #bbb;
+        .contact-info-footer {
+            color: #9ca3af;
         }
         
-        .contact-info p {
-            margin-bottom: 10px;
+        .contact-info-footer p {
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
+        .contact-info-footer i {
+            color: var(--primary);
+            width: 20px;
+        }
+        
         .copyright {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid #444;
-            color: #bbb;
+            border-top: 1px solid #1e293b;
+            color: #9ca3af;
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
+        .copyright span {
+            color: var(--primary);
+        }
+        
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s;
+            z-index: 99;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            z-index: 99;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -351,33 +842,63 @@
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 15px;
             }
             
             .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
+                font-size: 2.5rem;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
-            .service-card {
-                padding: 20px;
+            .plan-card.featured {
+                transform: scale(1);
+            }
+            
+            .plan-card.featured:hover {
+                transform: translateY(-10px);
+            }
+            
+            .direction-buttons {
+                flex-direction: column;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
             }
         }
         
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Animation Classes */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .fade-in {
             animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -387,11 +908,11 @@
         <div class="container header-container">
             <div class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-laptop-code"></i>
+                    <i class="fas fa-microchip"></i>
                 </div>
                 <div>
-                    <div class="logo-text">SoftSoft <span>ChepTech</span></div>
-                    <div class="logo-subtitle">IT Support & Solutions</div>
+                    <div class="logo-text">SoftSolution <span>ChepTech</span></div>
+                    <div class="logo-subtitle">Innovative IT Solutions</div>
                 </div>
             </div>
             
@@ -399,14 +920,14 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#support">Support</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="#location">Location</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             
             <a href="#contact" class="contact-header">
-                <i class="fas fa-phone-alt"></i> 24/7 Support: +971508160834
+                <i class="fas fa-headset"></i> 24/7 Support: +971508160834
             </a>
         </div>
     </header>
@@ -414,9 +935,37 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1 class="fade-in">Comprehensive IT Support & Solutions</h1>
-            <p class="fade-in">Professional computer repair, web development, networking, and cybersecurity services for businesses and individuals. Your trusted partner for all technology needs.</p>
-            <a href="#contact" class="cta-button fade-in">Get Support Now <i class="fas fa-arrow-right"></i></a>
+            <div class="hero-content">
+                <h1 class="fade-in">Comprehensive IT Support & Solutions</h1>
+                <p class="fade-in">Professional computer repair, web development, networking, and cybersecurity services for businesses and individuals. Your trusted partner for all technology needs in Ajman and Dubai.</p>
+                <a href="#contact" class="cta-button fade-in">
+                    Get Support Now <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-up">
+                    <h3>15+</h3>
+                    <p>Years of Excellence</p>
+                </div>
+                <div class="stat-item fade-up">
+                    <h3>5,200+</h3>
+                    <p>Devices Repaired</p>
+                </div>
+                <div class="stat-item fade-up">
+                    <h3>340+</h3>
+                    <p>Websites Developed</p>
+                </div>
+                <div class="stat-item fade-up">
+                    <h3>24/7</h3>
+                    <p>Support Available</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -429,7 +978,7 @@
             </div>
             
             <div class="services-grid">
-                <div class="service-card fade-in">
+                <div class="service-card fade-up">
                     <div class="service-icon">
                         <i class="fas fa-desktop"></i>
                     </div>
@@ -438,7 +987,7 @@
                     <a href="#contact" class="service-link">Get Repair <i class="fas fa-chevron-right"></i></a>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-up">
                     <div class="service-icon">
                         <i class="fas fa-laptop"></i>
                     </div>
@@ -447,7 +996,7 @@
                     <a href="#contact" class="service-link">Get Support <i class="fas fa-chevron-right"></i></a>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-up">
                     <div class="service-icon">
                         <i class="fas fa-code"></i>
                     </div>
@@ -456,7 +1005,7 @@
                     <a href="#contact" class="service-link">Start Project <i class="fas fa-chevron-right"></i></a>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-up">
                     <div class="service-icon">
                         <i class="fas fa-network-wired"></i>
                     </div>
@@ -465,7 +1014,7 @@
                     <a href="#contact" class="service-link">Optimize Network <i class="fas fa-chevron-right"></i></a>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-up">
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -474,82 +1023,132 @@
                     <a href="#contact" class="service-link">Secure Now <i class="fas fa-chevron-right"></i></a>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-up">
                     <div class="service-icon">
-                        <i class="fas fa-server"></i>
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>Infrastructure & Support</h3>
-                    <p>Complete IT infrastructure design and ongoing support. Server management, cloud solutions, and backup systems.</p>
+                    <h3>Cloud Solutions</h3>
+                    <p>Cloud migration, setup, and management. Google Workspace, Microsoft 365, and custom cloud infrastructure.</p>
                     <a href="#contact" class="service-link">Learn More <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Support Plans Section -->
+    <section class="support-plans" id="plans">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item fade-in">
-                    <h3>15+</h3>
-                    <p>Years of Experience</p>
+            <div class="section-title">
+                <h2>IT Support Plans</h2>
+                <p>Choose the support plan that works best for your needs</p>
+            </div>
+            
+            <div class="plans-grid">
+                <div class="plan-card fade-up">
+                    <div class="plan-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>On-Demand</h3>
+                    <div class="plan-price">AED 150<span>/hour</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> Pay-as-you-go support</li>
+                        <li><i class="fas fa-check-circle"></i> Remote or on-site</li>
+                        <li><i class="fas fa-check-circle"></i> No contracts</li>
+                        <li><i class="fas fa-check-circle"></i> 2-hour response</li>
+                        <li><i class="fas fa-check-circle"></i> All services included</li>
+                    </ul>
+                    <a href="#contact" class="plan-button">Get Support</a>
                 </div>
-                <div class="stat-item fade-in">
-                    <h3>5,200+</h3>
-                    <p>Devices Repaired</p>
+                
+                <div class="plan-card featured fade-up">
+                    <div class="popular-tag">Most Popular</div>
+                    <div class="plan-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Managed Services</h3>
+                    <div class="plan-price">AED 999<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> 20 hours included</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Preventive maintenance</li>
+                        <li><i class="fas fa-check-circle"></i> Priority response (1hr)</li>
+                        <li><i class="fas fa-check-circle"></i> Monthly reports</li>
+                    </ul>
+                    <a href="#contact" class="plan-button">Get Started</a>
                 </div>
-                <div class="stat-item fade-in">
-                    <h3>340+</h3>
-                    <p>Websites Developed</p>
-                </div>
-                <div class="stat-item fade-in">
-                    <h3>24/7</h3>
-                    <p>Support Available</p>
+                
+                <div class="plan-card fade-up">
+                    <div class="plan-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business Solutions</h3>
+                    <div class="plan-price">AED 2,499<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> 50 hours included</li>
+                        <li><i class="fas fa-check-circle"></i> Dedicated account manager</li>
+                        <li><i class="fas fa-check-circle"></i> Security audits</li>
+                        <li><i class="fas fa-check-circle"></i> Strategic planning</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 priority support</li>
+                    </ul>
+                    <a href="#contact" class="plan-button">Contact Sales</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Support Options -->
-    <section class="support-options" id="support">
+    <!-- Location & Map Section -->
+    <section class="location-section" id="location">
         <div class="container">
             <div class="section-title">
-                <h2>IT Support Options</h2>
-                <p>Choose the support plan that works best for your needs</p>
+                <h2>Visit Our Office</h2>
+                <p>Conveniently located in Rashidiya 1, Al Khor, Ajman</p>
             </div>
             
-            <div class="options-container">
-                <div class="option-card fade-in">
-                    <h3><i class="fas fa-tools option-icon"></i> On-Demand Support</h3>
-                    <p>Pay-as-you-go IT support for immediate issues. Perfect for individuals and small businesses with occasional needs.</p>
-                    <ul>
-                        <li>Hourly rates with no contracts</li>
-                        <li>Remote or on-site assistance</li>
-                        <li>Quick response time</li>
-                        <li>All services available</li>
-                    </ul>
+            <div class="location-container">
+                <div class="location-info fade-up">
+                    <span class="location-badge"><i class="fas fa-map-pin"></i> Our Location</span>
+                    <h3>SoftSolution ChepTech</h3>
+                    <p>Serving Ajman, Dubai, and the Northern Emirates with comprehensive IT support.</p>
+                    
+                    <div class="address-card">
+                        <div class="address-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p><strong>Alkhor, Rashidiya 1</strong><br>Near Al Zahraa Hospital<br>Ajman, United Arab Emirates</p>
+                        </div>
+                        <div class="address-line">
+                            <i class="fas fa-phone-alt"></i>
+                            <p>+971 50 816 0834 (24/7 Support)</p>
+                        </div>
+                        <div class="address-line">
+                            <i class="fas fa-envelope"></i>
+                            <p>bestmate2025@gmail.com</p>
+                        </div>
+                        <div class="address-line">
+                            <i class="fas fa-clock"></i>
+                            <p>Sat - Thu: 9:00 AM - 9:00 PM<br>Emergency: 24/7</p>
+                        </div>
+                    </div>
+                    
+                    <div class="direction-buttons">
+                        <a href="https://maps.google.com/?q=Alkhor+Rashidiya+1+Ajman" target="_blank" class="direction-btn google">
+                            <i class="fab fa-google"></i> Google Maps
+                        </a>
+                        <a href="https://waze.com/ul?q=Alkhor+Rashidiya+1+Ajman" target="_blank" class="direction-btn waze">
+                            <i class="fab fa-waze"></i> Waze
+                        </a>
+                        <a href="https://maps.apple.com/?q=Alkhor+Rashidiya+1+Ajman" target="_blank" class="direction-btn">
+                            <i class="fab fa-apple"></i> Apple Maps
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="option-card fade-in">
-                    <h3><i class="fas fa-calendar-check option-icon"></i> Managed Services</h3>
-                    <p>Proactive IT management with monthly plans. Ideal for businesses needing ongoing support and monitoring.</p>
-                    <ul>
-                        <li>Fixed monthly pricing</li>
-                        <li>24/7 monitoring & support</li>
-                        <li>Preventive maintenance</li>
-                        <li>Priority response</li>
-                    </ul>
-                </div>
-                
-                <div class="option-card fade-in">
-                    <h3><i class="fas fa-briefcase option-icon"></i> Business Solutions</h3>
-                    <p>Comprehensive IT packages for businesses. Customized plans including web development and cybersecurity.</p>
-                    <ul>
-                        <li>Customized service packages</li>
-                        <li>Dedicated account manager</li>
-                        <li>Regular security audits</li>
-                        <li>Strategic IT planning</li>
-                    </ul>
+                <div class="map-container fade-up">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231200.04131781028!2d55.26751075!3d25.34961245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5b7b7b7b7b7b%3A0x7b7b7b7b7b7b7b7b!2sAl%20Khor%2C%20Rashidiya%201%2C%20Ajman!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -560,94 +1159,114 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h3>SoftSoft ChepTech</h3>
-                    <p style="color: #bbb; margin-bottom: 20px;">Your trusted partner for all IT needs. Professional, reliable, and affordable technology solutions.</p>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> +971508160834</p>
-                        <p><i class="fas fa-envelope"></i> bestmate2025@gmail.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Innovation City</p>
+                    <h3>SoftSolution ChepTech</h3>
+                    <p>Your trusted partner for all IT needs in Ajman and Dubai. Professional, reliable, and affordable technology solutions since 2008.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#support">Support Plans</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#plans"><i class="fas fa-chevron-right"></i> Support Plans</a></li>
+                        <li><a href="#location"><i class="fas fa-chevron-right"></i> Location</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul>
-                        <li><a href="#services">Computer Repair</a></li>
-                        <li><a href="#services">Desktop & Laptop Support</a></li>
-                        <li><a href="#services">Web Development</a></li>
-                        <li><a href="#services">Networking</a></li>
-                        <li><a href="#services">Cybersecurity</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Computer Repair</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Desktop Support</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Networking</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Business Hours</h3>
-                    <ul style="color: #bbb;">
-                        <li>Monday - Friday: 8am - 8pm</li>
-                        <li>Saturday: 9am - 6pm</li>
-                        <li>Sunday: 10am - 4pm</li>
-                        <li>Emergency Support: 24/7</li>
-                    </ul>
+                    <h3>Contact Info</h3>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-phone-alt"></i> +971 50 816 0834</p>
+                        <p><i class="fas fa-envelope"></i> bestmate2025@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Alkhor, Rashidiya 1, Ajman</p>
+                        <p><i class="fas fa-clock"></i> Sat-Thu: 9am-9pm</p>
+                    </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 SoftSoft ChepTech IT Support. All rights reserved.</p>
+                <p>&copy; 2024 <span>SoftSolution ChepTech</span> IT Support. All rights reserved. Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> in Ajman</p>
             </div>
         </div>
     </footer>
 
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/971508160834" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
     <script>
-        // Simple animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, {
-                threshold: 0.1
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
-            
-            // Set initial state for fade elements
-            fadeElements.forEach(el => {
-                el.style.opacity = 0;
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                observer.observe(el);
+        });
+        
+        // Intersection Observer for fade-up animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
             });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        e.preventDefault();
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Back to top button visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        // Initial animation on load
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
         });
     </script>
 </body>
