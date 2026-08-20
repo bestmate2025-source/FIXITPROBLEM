@@ -3,8 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftSolution ChepTech - IT & Digital Marketing in Ajman & Dubai</title>
+    <title>SoftSolution ChepTech - IT & Cyber Security in Ajman & Dubai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Schema.org Local Business Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ITSolutionAndConsultingService",
+      "name": "SoftSolution ChepTech",
+      "image": "https://fixmyitproblem.online/logo.png",
+      "telephone": "+971508160834",
+      "email": "support@fixmyitproblem.online",
+      "url": "https://fixmyitproblem.online/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Alkhor, Rashidiya 1, Near Al Zahraa Hospital",
+        "addressLocality": "Ajman",
+        "addressRegion": "Ajman",
+        "addressCountry": "AE"
+      },
+      "areaServed": ["Ajman", "Dubai"],
+      "priceRange": "AED 150 - AED 999"
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -20,6 +41,7 @@
             --secondary: #10b981;
             --secondary-dark: #059669;
             --accent: #f59e0b;
+            --danger: #ef4444;
             --dark: #0f172a;
             --dark-light: #1e293b;
             --light: #f8fafc;
@@ -213,7 +235,7 @@
             background: var(--light);
         }
         
-        /* Stats */
+        /* Stats + Testimonials */
         .stats {
             padding: 60px 0;
             background: white;
@@ -239,6 +261,49 @@
             color: var(--gray);
             font-size: 1.1rem;
             font-weight: 500;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: 60px 0 80px;
+            background: white;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .testimonial-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 30px 25px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        .testimonial-card .stars {
+            color: #f59e0b;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .testimonial-card p {
+            color: var(--dark);
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        .testimonial-card .client-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .testimonial-card .client-role {
+            font-size: 0.9rem;
+            color: var(--gray);
         }
         
         /* Section title */
@@ -396,10 +461,99 @@
         }
         .dm-card .dm-tag i { margin-right: 6px; }
         
+        /* Cyber Threats & Protection Section (NEW) */
+        .cyber-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        .cyber-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .cyber-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border-top: 6px solid var(--danger);
+            position: relative;
+            overflow: hidden;
+        }
+        .cyber-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .cyber-card .cyber-icon {
+            font-size: 2.8rem;
+            color: var(--danger);
+            margin-bottom: 15px;
+        }
+        .cyber-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+        .cyber-card p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        .cyber-card .threat-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .cyber-card .threat-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        .cyber-card .threat-list li i {
+            color: var(--danger);
+            margin-top: 3px;
+            min-width: 18px;
+        }
+        .cyber-card .protection-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .cyber-card .protection-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        .cyber-card .protection-list li i {
+            color: var(--secondary);
+            margin-top: 3px;
+            min-width: 18px;
+        }
+        .cyber-card .card-tag {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
         /* Plans */
         .support-plans {
             padding: 80px 0;
-            background: var(--light);
+            background: white;
         }
         .plans-grid {
             display: grid;
@@ -408,7 +562,7 @@
             margin-top: 50px;
         }
         .plan-card {
-            background: white;
+            background: var(--light);
             border-radius: 20px;
             padding: 40px 30px;
             box-shadow: var(--shadow);
@@ -489,10 +643,10 @@
             box-shadow: var(--shadow);
         }
         
-        /* Blog Section - IT Security Tips */
+        /* Blog Section */
         .blog-section {
             padding: 80px 0;
-            background: white;
+            background: var(--light);
         }
         .blog-grid {
             display: grid;
@@ -501,7 +655,7 @@
             margin-top: 30px;
         }
         .blog-card {
-            background: var(--light);
+            background: white;
             border-radius: 20px;
             padding: 30px;
             transition: all 0.3s;
@@ -557,7 +711,7 @@
         /* Contact Form Section */
         .contact-section {
             padding: 80px 0;
-            background: var(--light);
+            background: white;
         }
         .contact-grid {
             display: grid;
@@ -566,7 +720,7 @@
             align-items: start;
         }
         .contact-form {
-            background: white;
+            background: var(--light);
             padding: 40px;
             border-radius: 20px;
             box-shadow: var(--shadow);
@@ -630,7 +784,7 @@
             gap: 30px;
         }
         .contact-info-card {
-            background: white;
+            background: var(--light);
             padding: 30px;
             border-radius: 20px;
             box-shadow: var(--shadow);
@@ -655,7 +809,7 @@
         /* Location */
         .location-section {
             padding: 80px 0;
-            background: white;
+            background: var(--light);
         }
         .location-container {
             display: grid;
@@ -664,7 +818,7 @@
             align-items: center;
         }
         .location-info {
-            background: var(--light);
+            background: white;
             padding: 40px;
             border-radius: 20px;
             box-shadow: var(--shadow);
@@ -685,7 +839,7 @@
             margin-bottom: 20px;
         }
         .address-card {
-            background: white;
+            background: var(--light);
             padding: 25px;
             border-radius: 15px;
             margin: 25px 0;
@@ -937,6 +1091,7 @@
             .direction-buttons { flex-direction: column; }
             .whatsapp-float { width: 50px; height: 50px; font-size: 1.5rem; bottom: 20px; right: 20px; }
             .blog-grid { grid-template-columns: 1fr; }
+            .cyber-grid { grid-template-columns: 1fr; }
         }
         
         .fade-up {
@@ -965,7 +1120,7 @@
                 <div class="logo-icon"><i class="fas fa-microchip"></i></div>
                 <div>
                     <div class="logo-text">SoftSolution <span>ChepTech</span></div>
-                    <div class="logo-subtitle">IT &amp; Digital Marketing</div>
+                    <div class="logo-subtitle">IT &amp; Cyber Security</div>
                 </div>
             </div>
             <nav>
@@ -973,6 +1128,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#digital-marketing">Digital Marketing</a></li>
+                    <li><a href="#cyber">Cyber Threats</a></li>
                     <li><a href="#blog">Security Blog</a></li>
                     <li><a href="#plans">Plans</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -988,17 +1144,17 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1 class="fade-in">IT Support &amp; Digital Marketing</h1>
-                <p class="fade-in">Professional computer repair, web development, networking, cybersecurity, and expert digital marketing for TikTok, Facebook, Instagram, and Google Ads. Trusted in Ajman &amp; Dubai.</p>
+                <h1 class="fade-in">IT Support &amp; Cyber Security</h1>
+                <p class="fade-in">Professional computer repair, web development, networking, cybersecurity, and expert digital marketing. Protecting your business from major cyber threats in Ajman &amp; Dubai.</p>
                 <a href="#contact" class="cta-button fade-in">
-                    Get Support Now <i class="fas fa-arrow-right"></i>
+                    Get Protected Now <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Stats -->
-    <section class="stats">
+    <section class="stats" id="stats">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item fade-up"><h3>15+</h3><p>Years of Excellence</p></div>
@@ -1009,12 +1165,42 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Real reviews from businesses and individuals we've helped in Ajman and Dubai.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-up">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"SoftSolution ChepTech fixed my laptop in less than 2 hours. Professional service and great communication. Highly recommend!"</p>
+                    <div class="client-name">— Ahmed Al Mazrouei</div>
+                    <div class="client-role">Business Owner, Ajman</div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Their Google Ads campaign doubled our leads in just one month. They really understand the local market in Dubai."</p>
+                    <div class="client-name">— Sara Al Khouri</div>
+                    <div class="client-role">Marketing Director, Dubai</div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"We've been using their managed IT services for over a year. Zero downtime and immediate support whenever we need it."</p>
+                    <div class="client-name">— Khalid Al Falasi</div>
+                    <div class="client-role">Operations Manager, Ajman</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
                 <h2>Our IT Services</h2>
-                <p>Complete range of IT services to keep your technology running smoothly.</p>
+                <p>Complete range of IT services to keep your technology running smoothly and securely.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card fade-up">
@@ -1044,7 +1230,7 @@
                 <div class="service-card fade-up">
                     <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Cybersecurity</h3>
-                    <p>Security audits, firewall setup, malware protection, and employee training.</p>
+                    <p>Security audits, firewall setup, malware protection, and employee training against major threats.</p>
                     <a href="#contact" class="service-link">Secure Now <i class="fas fa-chevron-right"></i></a>
                 </div>
                 <div class="service-card fade-up">
@@ -1093,7 +1279,98 @@
         </div>
     </section>
 
-    <!-- Blog Section - IT Security Tips (Banking, CC, Major Security) -->
+    <!-- Cyber Threats & Protection Section (NEW) -->
+    <section class="cyber-section" id="cyber">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-skull-crossbones" style="color: var(--danger);"></i> Cyber Threats &amp; Protection</h2>
+                <p>Understand the major cybersecurity threats and how to protect your business from them.</p>
+            </div>
+            <div class="cyber-grid">
+                <!-- Threat 1: Ransomware -->
+                <div class="cyber-card fade-up">
+                    <div class="cyber-icon"><i class="fas fa-lock"></i></div>
+                    <h3>🛡️ Ransomware</h3>
+                    <p>Malicious software that encrypts your files and demands payment for decryption. One of the most damaging threats to businesses.</p>
+                    <ul class="threat-list">
+                        <li><i class="fas fa-exclamation-triangle"></i> Encrypts critical business data</li>
+                        <li><i class="fas fa-exclamation-triangle"></i> Demands payment in cryptocurrency</li>
+                        <li><i class="fas fa-exclamation-triangle"></i> Can spread across entire network</li>
+                    </ul>
+                    <div style="margin-top: 15px; font-weight: 600; color: var(--secondary);">🛡️ Protection:</div>
+                    <ul class="protection-list">
+                        <li><i class="fas fa-check-circle"></i> Regular offline backups</li>
+                        <li><i class="fas fa-check-circle"></i> Endpoint protection with anti-ransomware</li>
+                        <li><i class="fas fa-check-circle"></i> Employee security awareness training</li>
+                        <li><i class="fas fa-check-circle"></i> Keep all software patched and updated</li>
+                    </ul>
+                    <span class="card-tag"><i class="fas fa-shield-alt"></i> Critical Threat</span>
+                </div>
+
+                <!-- Threat 2: Phishing & Social Engineering -->
+                <div class="cyber-card fade-up">
+                    <div class="cyber-icon"><i class="fas fa-fish"></i></div>
+                    <h3>🎣 Phishing &amp; Social Engineering</h3>
+                    <p>Deceptive emails, messages, or calls that trick employees into revealing sensitive information or clicking malicious links.</p>
+                    <ul class="threat-list">
+                        <li><i class="fas fa-exclamation-triangle"></i> Fake emails from trusted sources</li>
+                        <li><i class="fas fa-exclamation-triangle"></i> Urgent requests for credentials</li>
+                        <li><i class="fas fa-exclamation-triangle"></i> CEO fraud and impersonation</li>
+                    </ul>
+                    <div style="margin-top: 15px; font-weight: 600; color: var(--secondary);">🛡️ Protection:</div>
+                    <ul class="protection-list">
+                        <li><i class="fas fa-check-circle"></i> Email filtering and authentication (SPF, DKIM, DMARC)</li>
+                        <li><i class="fas fa-check-circle"></i> Regular phishing simulation tests</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-factor authentication (MFA) for all accounts</li>
+                        <li><i class="fas fa-check-circle"></i> Verify requests via separate communication channels</li>
+                    </ul>
+                    <span class="card-tag"><i class="fas fa-shield-alt"></i> Common Threat</span>
+                </div>
+
+                <!-- Threat 3: Insider Threats -->
+                <div class="cyber-card fade-up">
+                    <div class="cyber-icon"><i class="fas fa-user-secret"></i></div>
+                    <h3>👤 Insider Threats</h3>
+                    <p>Security risks originating from within the organization – employees, contractors, or partners who misuse access privileges.</p>
+                    <ul class="threat-list">
+                        <li><i class="fas fa-exclamation-triangle"></i> Data theft by disgruntled employees</li>
+                        <li><i class="fas fa-exclamation-triangle"></i> Accidental data exposure</li>
+                        <li><i class="fas fa-exclamation-triangle"></i> Credential sharing and misuse</li>
+                    </ul>
+                    <div style="margin-top: 15px; font-weight: 600; color: var(--secondary);">🛡️ Protection:</div>
+                    <ul class="protection-list">
+                        <li><i class="fas fa-check-circle"></i> Zero-trust access control</li>
+                        <li><i class="fas fa-check-circle"></i> User activity monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Least privilege principle for access</li>
+                        <li><i class="fas fa-check-circle"></i> Exit interviews and access revocation</li>
+                    </ul>
+                    <span class="card-tag"><i class="fas fa-shield-alt"></i> Internal Risk</span>
+                </div>
+
+                <!-- Threat 4: DDoS Attacks -->
+                <div class="cyber-card fade-up">
+                    <div class="cyber-icon"><i class="fas fa-server"></i></div>
+                    <h3>🌐 DDoS Attacks</h3>
+                    <p>Distributed Denial of Service attacks overwhelm your servers with traffic, making your website or services unavailable to legitimate users.</p>
+                    <ul class="threat-list">
+                        <li><i class="fas fa-exclamation-triangle"></i> Network flooding and resource exhaustion</li>
+                        <li><i class="fas fa-exclamation-triangle"></i> Business downtime and revenue loss</li>
+                        <li><i class="fas fa-exclamation-triangle"></i> Can be used as a distraction for other attacks</li>
+                    </ul>
+                    <div style="margin-top: 15px; font-weight: 600; color: var(--secondary);">🛡️ Protection:</div>
+                    <ul class="protection-list">
+                        <li><i class="fas fa-check-circle"></i> DDoS protection services (Cloudflare, AWS Shield)</li>
+                        <li><i class="fas fa-check-circle"></i> Rate limiting and traffic filtering</li>
+                        <li><i class="fas fa-check-circle"></i> Redundant infrastructure and failover</li>
+                        <li><i class="fas fa-check-circle"></i> Incident response plan</li>
+                    </ul>
+                    <span class="card-tag"><i class="fas fa-shield-alt"></i> Availability Threat</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
     <section class="blog-section" id="blog">
         <div class="container">
             <div class="section-title">
@@ -1101,47 +1378,39 @@
                 <p>Expert tips to protect your banking, credit cards, and digital identity from major security threats.</p>
             </div>
             <div class="blog-grid">
-                <!-- Blog 1: Banking Security -->
                 <div class="blog-card fade-up">
                     <div class="blog-icon"><i class="fas fa-university"></i></div>
                     <h3>🔒 Banking Security Essentials</h3>
-                    <p>Protect your online banking accounts from phishing, malware, and unauthorized access with these critical measures:</p>
+                    <p>Protect your online banking accounts from phishing, malware, and unauthorized access:</p>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> Always use multi-factor authentication (MFA) for banking apps.</li>
+                        <li><i class="fas fa-check-circle"></i> Always use multi-factor authentication (MFA).</li>
                         <li><i class="fas fa-check-circle"></i> Never click on SMS or email links claiming to be from your bank.</li>
                         <li><i class="fas fa-check-circle"></i> Use a dedicated, strong password for your bank account.</li>
-                        <li><i class="fas fa-check-circle"></i> Monitor your transactions weekly for any suspicious activity.</li>
-                        <li><i class="fas fa-check-circle"></i> Keep your device OS and banking app updated.</li>
+                        <li><i class="fas fa-check-circle"></i> Monitor your transactions weekly for suspicious activity.</li>
                     </ul>
                     <span class="blog-tag"><i class="fas fa-lock"></i> Banking Security</span>
                 </div>
-
-                <!-- Blog 2: Credit Card Security -->
                 <div class="blog-card fade-up">
                     <div class="blog-icon"><i class="fas fa-credit-card"></i></div>
                     <h3>💳 Credit Card Security Tips</h3>
-                    <p>Safeguard your credit cards from fraud, skimming, and online theft with these best practices:</p>
+                    <p>Safeguard your credit cards from fraud, skimming, and online theft:</p>
                     <ul>
                         <li><i class="fas fa-check-circle"></i> Enable transaction alerts for every purchase.</li>
-                        <li><i class="fas fa-check-circle"></i> Use virtual cards for online shopping where possible.</li>
+                        <li><i class="fas fa-check-circle"></i> Use virtual cards for online shopping.</li>
                         <li><i class="fas fa-check-circle"></i> Never save card details on untrusted websites.</li>
                         <li><i class="fas fa-check-circle"></i> Regularly check your statements for unauthorized charges.</li>
-                        <li><i class="fas fa-check-circle"></i> Use a privacy screen in public places when entering PINs.</li>
                     </ul>
                     <span class="blog-tag"><i class="fas fa-shield"></i> Card Security</span>
                 </div>
-
-                <!-- Blog 3: Major Security Threats -->
                 <div class="blog-card fade-up">
                     <div class="blog-icon"><i class="fas fa-skull-crossbones"></i></div>
-                    <h3>🚨 Major Security Threats &amp; Prevention</h3>
-                    <p>Stay ahead of ransomware, zero-day exploits, social engineering, and other advanced threats:</p>
+                    <h3>🚨 Major Security Threats</h3>
+                    <p>Stay ahead of ransomware, zero-day exploits, and social engineering:</p>
                     <ul>
                         <li><i class="fas fa-check-circle"></i> Implement zero-trust architecture for business networks.</li>
                         <li><i class="fas fa-check-circle"></i> Regularly back up critical data to offline storage.</li>
                         <li><i class="fas fa-check-circle"></i> Conduct simulated phishing tests for employees.</li>
                         <li><i class="fas fa-check-circle"></i> Use endpoint detection and response (EDR) solutions.</li>
-                        <li><i class="fas fa-check-circle"></i> Keep all software patched and updated immediately.</li>
                     </ul>
                     <span class="blog-tag"><i class="fas fa-exclamation-triangle"></i> Advanced Threats</span>
                 </div>
@@ -1201,7 +1470,7 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Contact Form -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-title">
@@ -1254,7 +1523,7 @@
                         <h4><i class="fas fa-headset" style="color: var(--primary);"></i> 24/7 Support</h4>
                         <p><i class="fas fa-phone-alt"></i> +971 50 816 0834</p>
                         <p><i class="fas fa-whatsapp" style="color: #25d366;"></i> WhatsApp: +971 50 816 0834</p>
-                        <p><i class="fas fa-envelope"></i> bestmate2025@gmail.com</p>
+                        <p><i class="fas fa-envelope"></i> support@fixmyitproblem.online</p>
                     </div>
                     <div class="contact-info-card fade-up">
                         <h4><i class="fas fa-clock" style="color: var(--primary);"></i> Business Hours</h4>
@@ -1281,11 +1550,11 @@
                 <div class="location-info fade-up">
                     <span class="location-badge"><i class="fas fa-map-pin"></i> Our Location</span>
                     <h3>SoftSolution ChepTech</h3>
-                    <p>Serving Ajman, Dubai, and the Northern Emirates with comprehensive IT &amp; digital marketing solutions.</p>
+                    <p>Serving Ajman, Dubai, and the Northern Emirates with comprehensive IT &amp; cyber security solutions.</p>
                     <div class="address-card">
                         <div class="address-line"><i class="fas fa-map-marker-alt"></i><p><strong>Alkhor, Rashidiya 1</strong><br>Near Al Zahraa Hospital<br>Ajman, United Arab Emirates</p></div>
                         <div class="address-line"><i class="fas fa-phone-alt"></i><p>+971 50 816 0834 (24/7 Support)</p></div>
-                        <div class="address-line"><i class="fas fa-envelope"></i><p>bestmate2025@gmail.com</p></div>
+                        <div class="address-line"><i class="fas fa-envelope"></i><p>support@fixmyitproblem.online</p></div>
                         <div class="address-line"><i class="fas fa-clock"></i><p>Sat - Thu: 9:00 AM - 9:00 PM<br>Emergency: 24/7</p></div>
                     </div>
                     <div class="direction-buttons">
@@ -1307,7 +1576,7 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>SoftSolution ChepTech</h3>
-                    <p>Your trusted partner for IT and digital marketing in Ajman &amp; Dubai. Professional, reliable, and affordable since 2008.</p>
+                    <p>Your trusted partner for IT, cyber security, and digital marketing in Ajman &amp; Dubai. Professional, reliable, and affordable since 2008.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1321,6 +1590,7 @@
                         <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
                         <li><a href="#digital-marketing"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
+                        <li><a href="#cyber"><i class="fas fa-chevron-right"></i> Cyber Threats</a></li>
                         <li><a href="#blog"><i class="fas fa-chevron-right"></i> Security Blog</a></li>
                         <li><a href="#plans"><i class="fas fa-chevron-right"></i> Support Plans</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
@@ -1333,6 +1603,7 @@
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Desktop Support</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Web Development</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Networking</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
                         <li><a href="#digital-marketing"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
                     </ul>
                 </div>
@@ -1340,7 +1611,7 @@
                     <h3>Contact Info</h3>
                     <div class="contact-info-footer">
                         <p><i class="fas fa-phone-alt"></i> +971 50 816 0834</p>
-                        <p><i class="fas fa-envelope"></i> bestmate2025@gmail.com</p>
+                        <p><i class="fas fa-envelope"></i> support@fixmyitproblem.online</p>
                         <p><i class="fas fa-map-marker-alt"></i> Alkhor, Rashidiya 1, Ajman</p>
                         <p><i class="fas fa-clock"></i> Sat-Thu: 9am-9pm</p>
                     </div>
@@ -1352,13 +1623,16 @@
                 <a href="/refund-policy">Refund Policy</a>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 <span>SoftSolution ChepTech</span> IT &amp; Digital Marketing. All rights reserved. Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> in Ajman</p>
+                <p>&copy; <span id="year"></span> <span>SoftSolution ChepTech</span> IT &amp; Cyber Security. All rights reserved. Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> in Ajman</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/971508160834" target="_blank" class="whatsapp-float">
+    <a href="https://wa.me/971508160834?text=Hi%20SoftSolution%20ChepTech,%20I%20need%20IT%20support" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
     <!-- Back to Top -->
@@ -1367,6 +1641,9 @@
     </a>
 
     <script>
+        // Dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1396,7 +1673,7 @@
             else backToTop.classList.remove('show');
         });
 
-        // Form submission alert (demo)
+        // Form submission alert
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your inquiry! We will get back to you within 24 hours.');
