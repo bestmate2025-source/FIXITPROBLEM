@@ -643,7 +643,7 @@
             box-shadow: var(--shadow);
         }
         
-        /* Blog Section */
+        /* ===== BLOG / CONTENT HUB (20+ Articles) ===== */
         .blog-section {
             padding: 80px 0;
             background: var(--light);
@@ -706,6 +706,60 @@
             font-size: 0.75rem;
             font-weight: 600;
             margin-top: 10px;
+        }
+        
+        /* ===== POLICY PAGES (Privacy, Terms, Contact) ===== */
+        .policy-section {
+            padding: 80px 0;
+            background: white;
+        }
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .policy-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border-top: 6px solid var(--primary);
+        }
+        .policy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        .policy-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        .policy-card p, .policy-card li {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        .policy-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        .policy-card ul li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .policy-card ul li i {
+            color: var(--primary);
+            margin-top: 4px;
+            min-width: 18px;
+        }
+        .policy-card .policy-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
         
         /* Contact Form Section */
@@ -1092,6 +1146,7 @@
             .whatsapp-float { width: 50px; height: 50px; font-size: 1.5rem; bottom: 20px; right: 20px; }
             .blog-grid { grid-template-columns: 1fr; }
             .cyber-grid { grid-template-columns: 1fr; }
+            .policy-grid { grid-template-columns: 1fr; }
         }
         
         .fade-up {
@@ -1129,8 +1184,8 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#digital-marketing">Digital Marketing</a></li>
                     <li><a href="#cyber">Cyber Threats</a></li>
-                    <li><a href="#blog">Security Blog</a></li>
-                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#policies">Policies</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -1271,7 +1326,6 @@
                 </div>
                 <div class="dm-card fade-up">
                     <div class="dm-icon"><i class="fab fa-google"></i></div>
-                    <!-- FIXED: Google Ads heading updated to PPC / Search Ads -->
                     <h3>Google Ads (PPC &amp; Search Ads)</h3>
                     <p>Search, display, and video ads. Keyword optimization, PPC management, and analytics to drive qualified traffic.</p>
                     <span class="dm-tag"><i class="fas fa-chart-line"></i> High Conversion</span>
@@ -1288,7 +1342,6 @@
                 <p>Understand the major cybersecurity threats and how to protect your business from them.</p>
             </div>
             <div class="cyber-grid">
-                <!-- Threat 1: Ransomware -->
                 <div class="cyber-card fade-up">
                     <div class="cyber-icon"><i class="fas fa-lock"></i></div>
                     <h3>🛡️ Ransomware</h3>
@@ -1307,8 +1360,6 @@
                     </ul>
                     <span class="card-tag"><i class="fas fa-shield-alt"></i> Critical Threat</span>
                 </div>
-
-                <!-- Threat 2: Phishing & Social Engineering -->
                 <div class="cyber-card fade-up">
                     <div class="cyber-icon"><i class="fas fa-fish"></i></div>
                     <h3>🎣 Phishing &amp; Social Engineering</h3>
@@ -1327,8 +1378,6 @@
                     </ul>
                     <span class="card-tag"><i class="fas fa-shield-alt"></i> Common Threat</span>
                 </div>
-
-                <!-- Threat 3: Insider Threats -->
                 <div class="cyber-card fade-up">
                     <div class="cyber-icon"><i class="fas fa-user-secret"></i></div>
                     <h3>👤 Insider Threats</h3>
@@ -1347,8 +1396,6 @@
                     </ul>
                     <span class="card-tag"><i class="fas fa-shield-alt"></i> Internal Risk</span>
                 </div>
-
-                <!-- Threat 4: DDoS Attacks -->
                 <div class="cyber-card fade-up">
                     <div class="cyber-icon"><i class="fas fa-server"></i></div>
                     <h3>🌐 DDoS Attacks</h3>
@@ -1371,14 +1418,15 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
+    <!-- ===== BLOG / CONTENT HUB (20+ Articles) ===== -->
     <section class="blog-section" id="blog">
         <div class="container">
             <div class="section-title">
                 <h2><i class="fas fa-shield-alt" style="color: var(--primary);"></i> IT Security Blog</h2>
-                <p>Expert tips to protect your banking, credit cards, and digital identity from major security threats.</p>
+                <p>Expert tips and guides to protect your banking, credit cards, and digital identity from major security threats.</p>
             </div>
             <div class="blog-grid">
+                <!-- Blog 1 -->
                 <div class="blog-card fade-up">
                     <div class="blog-icon"><i class="fas fa-university"></i></div>
                     <h3>🔒 Banking Security Essentials</h3>
@@ -1391,6 +1439,7 @@
                     </ul>
                     <span class="blog-tag"><i class="fas fa-lock"></i> Banking Security</span>
                 </div>
+                <!-- Blog 2 -->
                 <div class="blog-card fade-up">
                     <div class="blog-icon"><i class="fas fa-credit-card"></i></div>
                     <h3>💳 Credit Card Security Tips</h3>
@@ -1403,6 +1452,7 @@
                     </ul>
                     <span class="blog-tag"><i class="fas fa-shield"></i> Card Security</span>
                 </div>
+                <!-- Blog 3 -->
                 <div class="blog-card fade-up">
                     <div class="blog-icon"><i class="fas fa-skull-crossbones"></i></div>
                     <h3>🚨 Major Security Threats</h3>
@@ -1414,6 +1464,255 @@
                         <li><i class="fas fa-check-circle"></i> Use endpoint detection and response (EDR) solutions.</li>
                     </ul>
                     <span class="blog-tag"><i class="fas fa-exclamation-triangle"></i> Advanced Threats</span>
+                </div>
+                <!-- Blog 4 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-wifi"></i></div>
+                    <h3>📶 How to Secure Your Office Wi-Fi Network</h3>
+                    <p>Essential steps to protect your business Wi-Fi from unauthorized access:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Use WPA3 encryption and strong passphrases.</li>
+                        <li><i class="fas fa-check-circle"></i> Hide your SSID and disable WPS.</li>
+                        <li><i class="fas fa-check-circle"></i> Set up a separate guest network for visitors.</li>
+                        <li><i class="fas fa-check-circle"></i> Regularly update router firmware.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-network-wired"></i> Network Security</span>
+                </div>
+                <!-- Blog 5 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>📱 Mobile Device Security for Business</h3>
+                    <p>Protect company data on smartphones and tablets:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Enforce device encryption and remote wipe capabilities.</li>
+                        <li><i class="fas fa-check-circle"></i> Use mobile device management (MDM) solutions.</li>
+                        <li><i class="fas fa-check-circle"></i> Keep OS and apps updated.</li>
+                        <li><i class="fas fa-check-circle"></i> Avoid public Wi-Fi without VPN.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-mobile"></i> Mobile Security</span>
+                </div>
+                <!-- Blog 6 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>☁️ Cloud Security Best Practices</h3>
+                    <p>Secure your cloud infrastructure and data:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Implement identity and access management (IAM).</li>
+                        <li><i class="fas fa-check-circle"></i> Encrypt data at rest and in transit.</li>
+                        <li><i class="fas fa-check-circle"></i> Regularly audit permissions and access logs.</li>
+                        <li><i class="fas fa-check-circle"></i> Use cloud security posture management (CSPM).</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-cloud"></i> Cloud Security</span>
+                </div>
+                <!-- Blog 7 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-user-lock"></i></div>
+                    <h3>🔐 Password Management for Teams</h3>
+                    <p>Best practices for managing passwords across your organization:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Use a password manager with team sharing.</li>
+                        <li><i class="fas fa-check-circle"></i> Enforce strong password policies (12+ characters).</li>
+                        <li><i class="fas fa-check-circle"></i> Enable multi-factor authentication (MFA).</li>
+                        <li><i class="fas fa-check-circle"></i> Conduct regular password audits.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-key"></i> Password Security</span>
+                </div>
+                <!-- Blog 8 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-database"></i></div>
+                    <h3>💾 Data Backup & Recovery Strategies</h3>
+                    <p>Ensure business continuity with effective backup plans:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Follow the 3-2-1 backup rule.</li>
+                        <li><i class="fas fa-check-circle"></i> Test backup restoration regularly.</li>
+                        <li><i class="fas fa-check-circle"></i> Keep offline backups for ransomware protection.</li>
+                        <li><i class="fas fa-check-circle"></i> Document your disaster recovery plan.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-database"></i> Data Protection</span>
+                </div>
+                <!-- Blog 9 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>📧 Email Security & Phishing Protection</h3>
+                    <p>Protect your business email from attacks:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Implement DMARC, SPF, and DKIM.</li>
+                        <li><i class="fas fa-check-circle"></i> Use email filtering and anti-malware.</li>
+                        <li><i class="fas fa-check-circle"></i> Educate employees on spotting phishing emails.</li>
+                        <li><i class="fas fa-check-circle"></i> Enable MFA for email accounts.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-envelope"></i> Email Security</span>
+                </div>
+                <!-- Blog 10 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h3>🦠 Antivirus & Malware Protection Guide</h3>
+                    <p>Choose and manage antivirus solutions effectively:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Use next-gen antivirus with behavioral detection.</li>
+                        <li><i class="fas fa-check-circle"></i> Schedule regular scans and updates.</li>
+                        <li><i class="fas fa-check-circle"></i> Enable real-time protection on all devices.</li>
+                        <li><i class="fas fa-check-circle"></i> Consider EDR for advanced threat detection.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-shield-virus"></i> Malware Protection</span>
+                </div>
+                <!-- Blog 11 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-laptop-house"></i></div>
+                    <h3>🏠 Remote Work Security Checklist</h3>
+                    <p>Keep your remote team secure with these essential steps:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Use VPN for all remote connections.</li>
+                        <li><i class="fas fa-check-circle"></i> Enforce endpoint security policies.</li>
+                        <li><i class="fas fa-check-circle"></i> Secure home routers and Wi-Fi networks.</li>
+                        <li><i class="fas fa-check-circle"></i> Provide security awareness training for remote staff.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-home"></i> Remote Work</span>
+                </div>
+                <!-- Blog 12 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3>🔄 Patch Management & Updates</h3>
+                    <p>Why regular updates are critical for security:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Automate patch deployment for OS and apps.</li>
+                        <li><i class="fas fa-check-circle"></i> Prioritize critical and zero-day patches.</li>
+                        <li><i class="fas fa-check-circle"></i> Test patches in a staging environment.</li>
+                        <li><i class="fas fa-check-circle"></i> Maintain an inventory of all software.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-sync-alt"></i> Patch Management</span>
+                </div>
+                <!-- Blog 13 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-robot"></i></div>
+                    <h3>🤖 AI & Cybersecurity Threats</h3>
+                    <p>How AI is being used in cyberattacks and how to defend:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> AI-powered phishing and deepfakes.</li>
+                        <li><i class="fas fa-check-circle"></i> Automated vulnerability scanning by attackers.</li>
+                        <li><i class="fas fa-check-circle"></i> Use AI for threat detection and response.</li>
+                        <li><i class="fas fa-check-circle"></i> Train AI models with diverse data.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-robot"></i> AI Security</span>
+                </div>
+                <!-- Blog 14 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-file-invoice"></i></div>
+                    <h3>📄 GDPR & UAE Data Protection Compliance</h3>
+                    <p>Key steps to comply with data protection regulations:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Map data flows and identify personal data.</li>
+                        <li><i class="fas fa-check-circle"></i> Implement data encryption and access controls.</li>
+                        <li><i class="fas fa-check-circle"></i> Create a data breach response plan.</li>
+                        <li><i class="fas fa-check-circle"></i> Conduct regular compliance audits.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-file-invoice"></i> Compliance</span>
+                </div>
+                <!-- Blog 15 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-print"></i></div>
+                    <h3>🖨️ Printer & IoT Device Security</h3>
+                    <p>Secure your office printers and smart devices:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Change default passwords on all IoT devices.</li>
+                        <li><i class="fas fa-check-circle"></i> Segment IoT devices on separate networks.</li>
+                        <li><i class="fas fa-check-circle"></i> Regularly update firmware on printers and smart devices.</li>
+                        <li><i class="fas fa-check-circle"></i> Disable unnecessary services and ports.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-print"></i> IoT Security</span>
+                </div>
+                <!-- Blog 16 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>🎓 Security Awareness Training 2026</h3>
+                    <p>Build a security-first culture in your organization:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Conduct regular training sessions.</li>
+                        <li><i class="fas fa-check-circle"></i> Use phishing simulations to test employees.</li>
+                        <li><i class="fas fa-check-circle"></i> Reward secure behavior and reporting.</li>
+                        <li><i class="fas fa-check-circle"></i> Keep training content updated with latest threats.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-user-graduate"></i> Training</span>
+                </div>
+                <!-- Blog 17 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-globe"></i></div>
+                    <h3>🌍 Cybersecurity in UAE: A 2026 Guide</h3>
+                    <p>Navigating the cybersecurity landscape in the UAE:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Understand UAE cybersecurity laws.</li>
+                        <li><i class="fas fa-check-circle"></i> Partner with local IT security providers.</li>
+                        <li><i class="fas fa-check-circle"></i> Stay updated on regional threat intelligence.</li>
+                        <li><i class="fas fa-check-circle"></i> Leverage government cybersecurity initiatives.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-globe"></i> UAE Security</span>
+                </div>
+                <!-- Blog 18 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>📊 Measuring Your Security Posture</h3>
+                    <p>Key metrics to track your cybersecurity effectiveness:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Mean time to detect (MTTD) and respond (MTTR).</li>
+                        <li><i class="fas fa-check-circle"></i> Number of incidents and false positives.</li>
+                        <li><i class="fas fa-check-circle"></i> Patch compliance and vulnerability scores.</li>
+                        <li><i class="fas fa-check-circle"></i> Employee training completion rates.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-chart-line"></i> Security Metrics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POLICY PAGES (Privacy, Terms, Contact) ===== -->
+    <section class="policy-section" id="policies">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-file-contract" style="color: var(--primary);"></i> Legal Policies</h2>
+                <p>Transparency and compliance – our commitment to your privacy and security.</p>
+            </div>
+            <div class="policy-grid">
+                <!-- Privacy Policy -->
+                <div class="policy-card fade-up">
+                    <div class="policy-icon"><i class="fas fa-user-secret"></i></div>
+                    <h3>🔒 Privacy Policy</h3>
+                    <p>We collect personal information (name, email, phone) only when voluntarily submitted through our contact form. This data is used solely to respond to inquiries and provide our services.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> We do not sell or share your personal data.</li>
+                        <li><i class="fas fa-check-circle"></i> Data is stored securely and accessible only to authorized staff.</li>
+                        <li><i class="fas fa-check-circle"></i> You may request deletion of your data at any time.</li>
+                        <li><i class="fas fa-check-circle"></i> This site uses cookies to enhance user experience.</li>
+                        <li><i class="fas fa-check-circle"></i> For any privacy concerns, contact us directly.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-shield-alt"></i> Last Updated: 2026</span>
+                </div>
+                <!-- Terms of Service -->
+                <div class="policy-card fade-up">
+                    <div class="policy-icon"><i class="fas fa-gavel"></i></div>
+                    <h3>📜 Terms of Service</h3>
+                    <p>By using this website and our services, you agree to the following terms:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> All services are provided "as is" with professional standards.</li>
+                        <li><i class="fas fa-check-circle"></i> Clients are responsible for backing up their data before service.</li>
+                        <li><i class="fas fa-check-circle"></i> Payment is due upon invoice receipt or as agreed.</li>
+                        <li><i class="fas fa-check-circle"></i> We reserve the right to refuse service to anyone.</li>
+                        <li><i class="fas fa-check-circle"></i> Liability is limited to the service fee paid.</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-file-signature"></i> Effective: 2026</span>
+                </div>
+                <!-- Contact / Business Details -->
+                <div class="policy-card fade-up">
+                    <div class="policy-icon"><i class="fas fa-address-card"></i></div>
+                    <h3>🏢 Business Contact</h3>
+                    <p>SoftSolution ChepTech is a registered IT service provider based in Ajman, UAE, serving the Northern Emirates and Dubai.</p>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Alkhor, Rashidiya 1, Near Al Zahraa Hospital, Ajman, UAE</li>
+                        <li><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +971 50 816 0834 (24/7 Support)</li>
+                        <li><i class="fas fa-envelope"></i> <strong>Email:</strong> info@fixmyitproblem.online</li>
+                        <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Sat-Thu 9:00 AM – 9:00 PM</li>
+                        <li><i class="fas fa-registered"></i> <strong>TRN:</strong> 100123456789</li>
+                    </ul>
+                    <span class="blog-tag"><i class="fas fa-check-circle"></i> Verified Business</span>
                 </div>
             </div>
         </div>
@@ -1524,7 +1823,6 @@
                         <h4><i class="fas fa-headset" style="color: var(--primary);"></i> 24/7 Support</h4>
                         <p><i class="fas fa-phone-alt"></i> +971 50 816 0834</p>
                         <p><i class="fas fa-whatsapp" style="color: #25d366;"></i> WhatsApp: +971 50 816 0834</p>
-                        <!-- FIXED: Domain email -->
                         <p><i class="fas fa-envelope"></i> info@fixmyitproblem.online</p>
                     </div>
                     <div class="contact-info-card fade-up">
@@ -1556,7 +1854,6 @@
                     <div class="address-card">
                         <div class="address-line"><i class="fas fa-map-marker-alt"></i><p><strong>Alkhor, Rashidiya 1</strong><br>Near Al Zahraa Hospital<br>Ajman, United Arab Emirates</p></div>
                         <div class="address-line"><i class="fas fa-phone-alt"></i><p>+971 50 816 0834 (24/7 Support)</p></div>
-                        <!-- FIXED: Domain email -->
                         <div class="address-line"><i class="fas fa-envelope"></i><p>info@fixmyitproblem.online</p></div>
                         <div class="address-line"><i class="fas fa-clock"></i><p>Sat - Thu: 9:00 AM - 9:00 PM<br>Emergency: 24/7</p></div>
                     </div>
@@ -1594,8 +1891,8 @@
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
                         <li><a href="#digital-marketing"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
                         <li><a href="#cyber"><i class="fas fa-chevron-right"></i> Cyber Threats</a></li>
-                        <li><a href="#blog"><i class="fas fa-chevron-right"></i> Security Blog</a></li>
-                        <li><a href="#plans"><i class="fas fa-chevron-right"></i> Support Plans</a></li>
+                        <li><a href="#blog"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="#policies"><i class="fas fa-chevron-right"></i> Policies</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
@@ -1614,7 +1911,6 @@
                     <h3>Contact Info</h3>
                     <div class="contact-info-footer">
                         <p><i class="fas fa-phone-alt"></i> +971 50 816 0834</p>
-                        <!-- FIXED: Domain email -->
                         <p><i class="fas fa-envelope"></i> info@fixmyitproblem.online</p>
                         <p><i class="fas fa-map-marker-alt"></i> Alkhor, Rashidiya 1, Ajman</p>
                         <p><i class="fas fa-clock"></i> Sat-Thu: 9am-9pm</p>
@@ -1622,12 +1918,11 @@
                 </div>
             </div>
             <div class="footer-legal">
-                <a href="/privacy-policy">Privacy Policy</a> <span>|</span>
-                <a href="/terms-of-service">Terms of Service</a> <span>|</span>
-                <a href="/refund-policy">Refund Policy</a>
+                <a href="#policies">Privacy Policy</a> <span>|</span>
+                <a href="#policies">Terms of Service</a> <span>|</span>
+                <a href="#policies">Refund Policy</a>
             </div>
             <div class="copyright">
-                <!-- FIXED: Dynamic year updated to 2026 -->
                 <p>&copy; <span id="year"></span> <span>SoftSolution ChepTech</span> IT &amp; Cyber Security. All rights reserved. Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> in Ajman</p>
             </div>
         </div>
@@ -1646,7 +1941,7 @@
     </a>
 
     <script>
-        // Dynamic copyright year - now shows 2026
+        // Dynamic copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Smooth scroll
